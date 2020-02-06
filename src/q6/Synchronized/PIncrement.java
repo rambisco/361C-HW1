@@ -65,11 +65,11 @@ public class PIncrement implements Runnable{
     public void increment() {
 //        System.out.println(this);
 //        System.out.println("count: " + count + " is being incremented by: " + this);
-        synchronized (lock) {
             for (int i = 0; i < (m/n); i++) {
-                count++;
+                synchronized (lock) {
+                    count++;
+                }
             }
-        }
     }
 
 }
